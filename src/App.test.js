@@ -5,25 +5,25 @@ import App from "./App";
 test("button has correct initial color", () => {
   render(<App />);
   const colorBtn = screen.getByRole("button", {
-    name: "Change to blue",
+    name: "Change to Midnight Blue",
   });
 
   expect(colorBtn).toHaveStyle({
-    backgroundColor: "red",
+    backgroundColor: "MediumVioletRed",
   });
 
   fireEvent.click(colorBtn);
   expect(colorBtn).toHaveStyle({
-    backgroundColor: "blue",
+    backgroundColor: "MidnightBlue",
   });
 
-  expect(colorBtn.textContent).toBe("Change to red");
+  expect(colorBtn.textContent).toBe("Change to Medium Violet Red");
 });
 
 test("initial conditions", () => {
   render(<App />);
   const colorButton = screen.getByRole("button", {
-    name: "Change to blue",
+    name: "Change to Midnight Blue",
   });
 
   expect(colorButton).toBeEnabled();
@@ -49,7 +49,7 @@ test("Disable button has gray background and reverts to red", () => {
   render(<App />);
   const checkbox = screen.getByRole("checkbox");
   const colorBtn = screen.getByRole("button", {
-    name: "Change to blue",
+    name: "Change to Midnight Blue",
   });
 
   fireEvent.click(checkbox);
@@ -59,7 +59,7 @@ test("Disable button has gray background and reverts to red", () => {
 
   fireEvent.click(checkbox);
   expect(colorBtn).toHaveStyle({
-    backgroundColor: "red",
+    backgroundColor: "Medium Violet Red",
   });
 });
 
